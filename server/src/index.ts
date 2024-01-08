@@ -4,12 +4,14 @@ config();
 import express, {Request, Response} from "express";
 import mongoose from "mongoose";
 import BlogPost from './models/BlogPost';
+import cors from 'cors';
 
 
 const PORT = 5000;
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/blog", (req: Request, res: Response) => {
     res.send("hey");
